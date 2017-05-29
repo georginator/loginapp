@@ -2,70 +2,79 @@
 //array/list of users
 var zodiac = [
 	{
+		image: "img/aquarius.png",
 		sign: "aquarius",
-		info:"Progressive, original, independent, humanitarian"
 	},
 	{
+		image: "img/pisces.png",
 		sign:"pisces",
-		info:" Compassionate, artistic, intuitive, gentle, wise, musical"
 	},
-	{
+	{	
+		image: "img/aries.png",
 		sign:"aries",	
-		info:"Courageous, determined, confident, enthusiastic, optimistic, honest, passionate"
 	},
 	{
+		image: "img/taurus.png",
 		sign:"taurus",
-		info:"Reliable, patient, practical, devoted, responsible, stable"
 	},
 	{
+		image: "img/gemini.png",
 		sign:"gemini",
-		info:"Gentle, affectionate, curious, adaptable, ability to learn quickly and exchange ideas"
 	},
 	{
+		image: "img/cancer.png",
 		sign:"cancer",
-		info:"Tenacious, highly imaginative, loyal, emotional, sympathetic, persuasive"
 	},
 	{
+		image: "img/leo.png",
 		sign:"leo",
-		info:"Creative, passionate, generous, warm-hearted, cheerful, humorous"
 	},
 	{
+		image: "img/virgo.png",
 		sign:"virgo",
-		info:"Loyal, analytical, kind, hardworking, practical"
 	},
 	{
+		image: "img/libra.png",
 		sign:"libra",
-		info:"Cooperative,diplomatic, gracious, fair-minded, social"
 	},
 	{
+		image: "img/scorpio.png",
 		sign:"scorpio",
-		info:"Resourceful, brave, passionate, stubborn, a true friend"
 	},
 	{
+		image: "img/sagittarius.png",
 		sign:"sagittarius",
-		info:"Generous, idealistic, great sense of humor"
 	},
 	{
+		image: "img/capricorn.png",
 		sign:"capricorn",
-		info:"Responsible, disciplined, self-control, good managers"
 	}
 ]
 
 
 
-function getInfo () {
+function horoscope () {
 
-	var userdata = document.getElementById("userdata").value
-	
+	var userdata = document.getElementById("userdata")
+	console.log(userdata)
+	console.log("users value is: " + userdata.value)
+
+
 
 
 	for(i = 0; i < zodiac.length; i++) {
-		if(userdata == zodiac[i].sign) {
-			document.write("You are " + zodiac[i].info)
+
+
+
+		if(userdata.value.toLowerCase() === zodiac[i].sign) {
+			document.getElementById("yourSign").textContent = userdata.value
+			document.getElementById("icon").src = zodiac[i].image
 			return
 		}
+		document.getElementById("yourSign").textContent = "Invalid horoscope sign"
+		document.getElementById("yourHoroscope").textContent = ""
+		document.getElementById("icon").src = ""
 	}
-	document.write("incorrect zodiac entry")
 }
 
 

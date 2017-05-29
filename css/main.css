@@ -1,5 +1,16 @@
 body {
 	text-align: center;
+	background-image: url(../img/andromeda.jpg);
+	background-size:100% cover;
+	/*background-repeat: no-repeat;*/
 }
 
 
+h1 {
+	color:lightgray;
+	margin-top: 100px;
+}
+
+input {
+	margin: 50px 0;
+}
